@@ -1,3 +1,7 @@
+import 'typeface-press-start-2p';
+import 'typeface-vt323';
+import 'typeface-major-mono-display';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
