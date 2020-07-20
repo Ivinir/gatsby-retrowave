@@ -1,9 +1,17 @@
-const TEST_ACTION = 'TEST_ACTION';
+const INCREASE = 'INCREASE';
+const DECREASE = 'DECREASE';
 
-const someReducer = (state = { }, action) => {
+
+const initialState = {
+  number: 0
+}
+
+const someReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TEST_ACTION:
-      return state;
+    case INCREASE:
+      return { ...state, number: state.number + 1 };
+    case DECREASE:
+      return { ...state, number: state.number - 1 };
     default:
       return state;
   }
