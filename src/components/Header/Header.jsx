@@ -10,7 +10,6 @@ import headerStyles from './header.module.scss';
 const Header = () => {
   return (
     <header className={`header header-top-transparent ${headerStyles.header}`}>
-      HEADER
     </header>
   );
 };

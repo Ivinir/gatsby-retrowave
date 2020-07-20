@@ -1,0 +1,14 @@
+@import "../../atoms/theme/variables";
+
+
+.taskbar {
+  position: fixed;
+  bottom: 0px;
+  border-top: 2px solid rgb(255, 255, 255);
+  height: 34px;
+  width: 100%;
+  color: black;
+  background-color: $footer-background-color;
+  display: flex;
+  justify-content: space-between;
+}

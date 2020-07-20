@@ -1,0 +1,12 @@
+@import "../../atoms/theme/variables";
+
+.taskbarLeftBox{
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-family: $font-console;
+  background-color: transparent;
+  line-height: 23px;
+  font-size: 23px;
+}
