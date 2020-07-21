@@ -6,4 +6,9 @@
   border-right: 2px solid white;
   border-bottom: 2px solid white;
   background-color: $footer-right-box-color;
+  .taskbarRightBox__clock {
+    font-size: 20px;
+    line-height: 26px;
+    padding: 0 5px;
+  }
 }

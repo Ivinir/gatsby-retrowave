@@ -1,0 +1,30 @@
+@import "./variables";
+
+html,
+body {
+    margin: 0;
+    background-color: rgb(35, 0, 46);
+}
+
+body {
+  margin: 0;
+  background-color: $background-main-color;
+  color: $text-light-color;
+  font-family: $font-console;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: $text-main-color;
+  font-family: $font-2p;
+}
+
+p,
+span {
+  font-size: 20px;
+}
