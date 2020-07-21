@@ -3,16 +3,17 @@ import React, { useEffect } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 
 import BackgroundImage from 'gatsby-background-image-es5'
-
+import styles from './backgroundSection.module.scss'
+ 
 // TODO -> Migrate styles to the module
 
-const BackgroundSection = ({ className }) => {
+const BackgroundSection = (props) => {
 
   useEffect(() => {
-    glitcEffect();
+    glitchEffect();
   })
 
-  const glitcEffect = () => {
+  const glitchEffect = () => {
     let bg = document.getElementById('background');
     let count = 10;
     for (let i = 0; i < count; i++) {
@@ -59,11 +60,12 @@ const BackgroundSection = ({ className }) => {
         // Set ImageData.
         const imageData = data.desktop.childImageSharp.fluid
         return (
-          <div id="background">
+          <div 
+          className={`background ${styles.background}`}
+          id="background">
 
             <BackgroundImage
               Tag="section"
-              className={className}
               fluid={imageData}
               backgroundColor={`#040e18`}
             >

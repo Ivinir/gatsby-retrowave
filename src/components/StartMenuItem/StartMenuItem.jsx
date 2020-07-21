@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from './startMenuItem.module.scss';
 import Image from '../Image/Image';
+import { useTranslation } from 'react-i18next';
 
 const StartMenuItem = (props) => {
+  const { t, i18n } = useTranslation('common');
 
   const iconSelected = () => {
     alert(props.value)
@@ -19,7 +21,7 @@ const StartMenuItem = (props) => {
         <Image alt="placeholder" filename={props.image} />
       </div>
       <div className={`startMenuItem___text ${styles.startMenuItem__text}`} >
-        {props.label}
+        {t(props.label)}
       </div>
     </div>
   )

@@ -1,0 +1,16 @@
+{
+  "taskbar": {
+    "leftBox": {
+      "start": "开始"
+    }
+  },
+  "startMenu": {
+    "myName":"迭戈  桑塔洛拉",
+    "item": {
+      "aboutMe": "关于我",
+      "social": "社会的",
+      "myTools": "我的工具",
+      "curriculumVitae": "个人简历"
+    }
+  }
+}
