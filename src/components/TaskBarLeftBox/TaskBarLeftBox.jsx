@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../../components/image/image';
+import Image from '../../components/Image/Image';
 
 import styles from './taskbarLeftBox.module.scss';
 import { useTranslation } from 'react-i18next';
