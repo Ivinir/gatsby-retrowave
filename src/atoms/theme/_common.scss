@@ -28,3 +28,18 @@ p,
 span {
   font-size: 20px;
 }
+
+div:focus,
+div:active:focus,
+div.active:focus,
+div.focus,
+div:active.focus,
+div.active.focus ,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus {
+  outline: none !important;
+}

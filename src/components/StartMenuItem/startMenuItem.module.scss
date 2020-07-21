@@ -1,0 +1,19 @@
+.startMenuItem {
+  display: flex;
+  padding: 10px;
+  &:hover {
+    background-color: blue;
+    color: white;
+}
+}
+
+.startMenuItem__image {
+  margin-right: 10px;
+  width: 30px;
+  max-height: 30px;
+}
+
+.startMenuItem__text {
+  line-height: 30px;
+
+}

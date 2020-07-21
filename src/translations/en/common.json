@@ -3,5 +3,13 @@
     "leftBox": {
       "start": "Start"
     }
+  },
+  "startMenu": {
+    "item": {
+      "aboutMe": "About Me",
+      "social": "Social",
+      "myTools": "My Tools",
+      "curriculumVitae": "Curriculum Vitae"
+    }
   }
 }
