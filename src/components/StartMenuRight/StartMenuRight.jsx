@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './startMenuRight.module.scss';
-import StartMenuItem from '../StartMenuItem/startMenuItem';
+import StartMenuItem from '../StartMenuItem/StartMenuItem';
 import { useTranslation } from 'react-i18next';
 
 const StartMenuRight = () => {
