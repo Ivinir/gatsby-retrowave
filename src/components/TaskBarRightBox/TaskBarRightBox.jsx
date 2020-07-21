@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styles from './taskbarRightBox.module.scss'
-import { useTranslation } from "react-i18next";
+import LanguageSelector from '../LanguageSelector/languageSelector';
 
 const TaskBarRightBox = () => {
   const [time, setTime] = useState(() => new Date());
-  const { t, i18n } = useTranslation('common');
 
   useEffect(() => {
     getTime();
@@ -23,9 +22,7 @@ const TaskBarRightBox = () => {
 
   return (
     <div className={`taskbarRightBox ${styles.taskbarRightBox}`}>
-      <button onClick={() => i18n.changeLanguage('es')}>ES</button>
-      <button onClick={() => i18n.changeLanguage('en')}>EN</button>
-      <button onClick={() => i18n.changeLanguage('zh')}>ZH</button>
+      <LanguageSelector />
       <span className={`taskbarRightBox ${styles.taskbarRightBox__clock}`}>{time.toString()}</span>
     </div>
   )
