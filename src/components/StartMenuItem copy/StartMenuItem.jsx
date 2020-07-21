@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './startMenuItem.module.scss';
-import Image from '../Image/Image';
+import Image from '../image/image';
 
 const StartMenuItem = (props) => {
 
