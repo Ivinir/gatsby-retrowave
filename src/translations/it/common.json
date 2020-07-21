@@ -1,0 +1,16 @@
+{
+  "taskbar": {
+    "leftBox": {
+      "start": "Pizza"
+    }
+  },
+  "startMenu": {
+    "myName":"Parmegiano Regiano",
+    "item": {
+      "aboutMe": "Pizza",
+      "social": "Pizza",
+      "myTools": "Pizza",
+      "curriculumVitae": "Pizza"
+    }
+  }
+}

@@ -11,7 +11,7 @@ const IndexPage = () => {
     <App>
       <Desktop />
       <TaskBar />
-      <BackgroundSection className="background" />
+      <BackgroundSection/>
 
     </App>
   );
