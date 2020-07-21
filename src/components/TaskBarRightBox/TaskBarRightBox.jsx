@@ -25,6 +25,7 @@ const TaskBarRightBox = () => {
     <div className={`taskbarRightBox ${styles.taskbarRightBox}`}>
       <button onClick={() => i18n.changeLanguage('es')}>ES</button>
       <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+      <button onClick={() => i18n.changeLanguage('zh')}>ZH</button>
       <span className={`taskbarRightBox ${styles.taskbarRightBox__clock}`}>{time.toString()}</span>
     </div>
   )
