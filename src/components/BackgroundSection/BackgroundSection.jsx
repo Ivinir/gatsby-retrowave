@@ -7,7 +7,7 @@ import styles from './backgroundSection.module.scss'
  
 // TODO -> Migrate styles to the module
 
-const BackgroundSection = ({ className }) => {
+const BackgroundSection = (props) => {
 
   useEffect(() => {
     glitchEffect();
@@ -66,7 +66,6 @@ const BackgroundSection = ({ className }) => {
 
             <BackgroundImage
               Tag="section"
-              className={className}
               fluid={imageData}
               backgroundColor={`#040e18`}
             >
