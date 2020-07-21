@@ -1,0 +1,61 @@
+@import "./variables";
+
+html,
+body {
+  background-color: rgb(35, 0, 46);
+  margin: 0;
+}
+
+body {
+  background-color: $background-main-color;
+  color: $text-light-color;
+  font-family: $font-console;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: $text-main-color;
+  font-family: $font-2p;
+}
+
+p,
+span {
+  font-size: 20px;
+}
+
+div:focus,
+div:active:focus,
+div.active:focus,
+div.focus,
+div:active.focus,
+div.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus {
+  outline: none !important;
+}
+
+.background {
+  position: absolute !important;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: url("../../images/background.jpg") center;
+  background-size: cover;
+}
+
+.box {
+  position: absolute;
+  background: url("../../images/background.jpg");
+}
+
