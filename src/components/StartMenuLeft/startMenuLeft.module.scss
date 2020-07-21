@@ -1,0 +1,17 @@
+@import '../../atoms/theme/variables';
+
+.startMenuLeft {
+  background: linear-gradient(180deg, rgba(128, 0, 207, 1) 0%, rgba(3, 0, 32, 1) 100%);
+  width: 40px;
+  position: relative;
+  .startMenuLeft__text {
+    position: absolute;
+    bottom: 0;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    font-size: 28px;
+    padding-top: 10px;
+    color: white;
+    font-family: $font-major-mono;
+  }
+}

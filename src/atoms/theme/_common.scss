@@ -2,15 +2,15 @@
 
 html,
 body {
-    margin: 0;
-    background-color: rgb(35, 0, 46);
+  background-color: rgb(35, 0, 46);
+  margin: 0;
 }
 
 body {
-  margin: 0;
   background-color: $background-main-color;
   color: $text-light-color;
   font-family: $font-console;
+  margin: 0;
 }
 
 h1,
