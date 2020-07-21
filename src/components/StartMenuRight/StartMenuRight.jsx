@@ -24,10 +24,10 @@ const MenuItemList = (props) => {
       ]
     } else {
       return [
-        { image: 'pizza.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
-        { image: 'pizza.png', label: 'startMenu.item.social', value: 'social' },
-        { image: 'pizza.png', label: 'startMenu.item.myTools', value: 'my-tools' },
-        { image: 'pizza.png', label: 'startMenu.item.curriculumVitae', value: 'cv' }
+        { image: 'it-about-me.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
+        { image: 'it-pizza.png', label: 'startMenu.item.social', value: 'social' },
+        { image: 'it-pizza.png', label: 'startMenu.item.myTools', value: 'my-tools' },
+        { image: 'it-pizza.png', label: 'startMenu.item.curriculumVitae', value: 'cv' }
       ]
     }
   }
