@@ -34,6 +34,7 @@ const LanguageSelectorMenu = (props) => {
         <button onClick={() => changeLanguage('es')}>ES</button>
         <button onClick={() => changeLanguage('en')}>EN</button>
         <button onClick={() => changeLanguage('zh')}>ZH</button>
+        <button onClick={() => changeLanguage('it')}>IT</button>
       </div>
     )
   } else {

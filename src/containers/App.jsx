@@ -10,6 +10,7 @@ import { I18nextProvider } from "react-i18next";
 import common_en from "../translations/en/common.json";
 import common_es from "../translations/es/common.json";
 import common_zh from "../translations/zh/common.json";
+import common_it from "../translations/it/common.json";
 
 import i18next from "i18next";
 
@@ -29,6 +30,9 @@ i18next.init({
     },
     zh: {
       common: common_zh
+    },
+    it: {
+      common: common_it
     },
   },
 });
