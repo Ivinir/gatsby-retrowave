@@ -4,8 +4,6 @@ import StartMenuItem from '../StartMenuItem/StartMenuItem';
 import { useTranslation } from 'react-i18next';
 
 const StartMenuRight = () => {
-
-
   return (
     <div className={`startMenuRight ${styles.startMenuRight}`}>
       <MenuItemList />
@@ -16,7 +14,7 @@ const StartMenuRight = () => {
 const MenuItemList = (props) => {
   const { t, i18n } = useTranslation('common');
 
-  const getLocation = () => {
+  const getMenuItemList = () => {
     if (i18n.language !== 'it') {
       return [
         { image: 'glitch-greek-bust.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
@@ -32,20 +30,20 @@ const MenuItemList = (props) => {
         { image: 'pizza.png', label: 'startMenu.item.curriculumVitae', value: 'cv' }
       ]
     }
-
   }
-  let menuItemList = getLocation()
-  const items = []
+
+  let menuItemList = getMenuItemList()
+  const render = []
 
   if (menuItemList) {
     menuItemList.map((value, index) => {
-      items.push(<StartMenuItem key={index} image={value.image} label={value.label} value={value.value} />)
+      render.push(<StartMenuItem key={index} image={value.image} label={value.label} value={value.value} />)
     })
   }
 
   return (
     <div>
-      {items}
+      {render}
     </div>
   )
 

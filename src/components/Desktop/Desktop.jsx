@@ -8,12 +8,46 @@ const Desktop = () => {
 
   return (
     <div className={`desktop ${styles.desktop}`} >
-      <DesktopIcon image={"glitch-greek-bust.png"} label={t('startMenu.item.aboutMe')} value={'about-me'} />
-      <DesktopIcon image={"icon-contact.png"} label={t('startMenu.item.social')} value={'social'} />
-      <DesktopIcon image={"icon-tools.png"} label={t('startMenu.item.myTools')} value={'my-tools'} />
-      <DesktopIcon image={"icon-cv.png"} label={t('startMenu.item.curriculumVitae')} value={'cv'} />
-      <DesktopIcon image={"icon-folder.png"} label={"Placeholder"} value={'placeholder'} />    </div>
+      <DesktopIconList />
+    </div>
   )
+}
+
+const DesktopIconList = () => {
+  const { t, i18n } = useTranslation('common');
+
+  const getDesktopIconList = () => {
+    if (i18n.language !== 'it') {
+      return [
+        { image: 'glitch-greek-bust.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
+        { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social' },
+        { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools' },
+        { image: 'icon-cv', label: 'startMenu.item.curriculumVitae', value: 'cv' }
+      ]
+    } else {
+      return [
+        { image: 'pizza.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
+        { image: 'pizza.png', label: 'startMenu.item.social', value: 'social' },
+        { image: 'pizza.png', label: 'startMenu.item.myTools', value: 'my-tools' },
+        { image: 'pizza.png', label: 'startMenu.item.curriculumVitae', value: 'cv' }
+      ]
+    }
+  }
+  let desktopIconList = getDesktopIconList();
+  let render = []
+
+  if (desktopIconList) {
+    desktopIconList.map((value, index) => {
+      render.push(<DesktopIcon key={index} image={value.image} label={value.label} value={value.value} />)
+    })
+  }
+
+  return (
+    <div>
+      {render}
+    </div>
+  )
+
 }
 
 export default Desktop;

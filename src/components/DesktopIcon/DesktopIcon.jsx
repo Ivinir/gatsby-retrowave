@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import styles from './desktopIcon.module.scss';
 import Image from '../Image/Image';
+import { useTranslation } from 'react-i18next';
 
 const DesktopIcon = (props) => {
+  const { t, i18n } = useTranslation('common');
 
   const iconSelected = () => {
     alert(props.value)
@@ -18,7 +20,7 @@ const DesktopIcon = (props) => {
         <Image alt="placeholder" filename={props.image} />
       </div>
       <div className="desktop-icon__name">
-        {props.label}
+        {t(props.label)}
       </div>
     </div>
   )
