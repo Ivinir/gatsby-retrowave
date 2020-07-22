@@ -1,10 +1,9 @@
 const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 
-
 const initialState = {
-  number: 0
-}
+  number: 0,
+};
 
 const someReducer = (state = initialState, action) => {
   switch (action.type) {

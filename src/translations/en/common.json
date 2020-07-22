@@ -5,12 +5,17 @@
     }
   },
   "startMenu": {
-    "myName":"diego santaolalla",
+    "myName": "diego santaolalla",
     "item": {
       "aboutMe": "About Me",
       "social": "Social",
       "myTools": "My Tools",
-      "curriculumVitae": "Curriculum Vitae"
+      "curriculumVitae": "Curriculum Vitae",
+      "readMe": "Read Me"
     }
+  },
+  "readme": {
+    "title": "Read Me.txt",
+    "content": "It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Bender, hurry! This fuel's expensive! Also, we're dying!  Well I'da done better, but it's plum hard pleading a case while awaiting trial for that there incompetence. OK, this has gotta stop. I'm going to remind Fry of his humanity the way only a woman can. And so we say goodbye to our beloved pet, Nibbler, who's gone to a place where I, too, hope one day to go. The toilet."
   }
 }

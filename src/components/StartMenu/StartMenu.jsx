@@ -4,6 +4,7 @@ import StartMenuRight from '../StartMenuRight/StartMenuRight';
 import StartMenuLeft from '../StartMenuLeft/StartMenuLeft';
 
 const StartMenu = (props) => {
+  
   return (
     <div className={
       `startMenu 

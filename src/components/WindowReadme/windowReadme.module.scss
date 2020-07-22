@@ -1,0 +1,52 @@
+.windowReadme {
+  height: 60%;
+  width: 80%;
+  background-color: darkgrey;
+  position: absolute;
+  left: 40px;
+  top: 100px;
+  z-index: 2;
+}
+
+.windowReadme__maximized {
+  position: fixed;
+  // Transform as inline style need to ve overriden
+  transform: none !important;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 2px);
+}
+
+.windowReadme__bar {
+  height: 25px;
+  background-color: blue;
+  justify-content: space-between;
+  display: flex;
+  border: 2px solid lightgrey;
+}
+
+.windowReadme__bar__left {
+  width: 100%;
+}
+
+.windowReadme__bar__button__container {
+  width: 107px;
+}
+
+.windowReadme__bar__button {
+  background-color: grey;
+  width: 25px;
+  height: 25px;
+}
+
+.windowReadme__screen {
+  background-color: black;
+  height: calc(100% - 25px);
+  border: 2px solid lightgrey;
+  border-top: none;
+}
+.windowReadme__screen__content {
+  height: 100%;
+  overflow: scroll;
+}
