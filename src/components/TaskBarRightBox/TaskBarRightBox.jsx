@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './taskbarRightBox.module.scss'
-import LanguageSelector from '../LanguageSelector/languageSelector';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const TaskBarRightBox = () => {
   const [time, setTime] = useState(() => new Date());
