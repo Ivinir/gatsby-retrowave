@@ -46,7 +46,7 @@ const getDesktopIconList = () => {
       { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social' },
       { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools' },
       { image: 'icon-cv.png', label: 'startMenu.item.curriculumVitae', value: 'cv' },
-      { image: 'read-me.png', label: 'startMenu.item.readMe', value: 'read-me', dispatcher: 'README_OPEN' }
+      { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', dispatcher: 'README_OPEN' }
     ]
   } else {
     return [

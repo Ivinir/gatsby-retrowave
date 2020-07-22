@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 const WindowReadme = ({ windowReadme }) => {
   const { t, i18n } = useTranslation('common');
 
-  const store = useStore();
   const dispatch = useDispatch()
 
   function maximize() {
