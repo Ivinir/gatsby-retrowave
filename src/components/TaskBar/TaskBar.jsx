@@ -2,22 +2,23 @@ import React, { useState } from 'react'
 import TaskBarLeftBox from '../TaskBarLeftBox/TaskBarLeftBox'
 import TaskBarRightBox from '../TaskBarRightBox/TaskBarRightBox'
 
+import { useStore, useDispatch, useSelector } from 'react-redux';
 import styles from './taskbar.module.scss';
 import StartMenu from '../StartMenu/StartMenu';
 
 export default function TaskBar() {
 
-  const [isActive, setIsActive] = useState(false)
+  const dispatch = useDispatch()
 
-  const boxClicked = () => {
-    setIsActive(!isActive)
-  }
+  const { startMenuActive } = useSelector(state => ({
+    startMenuActive: state.startMenuReducer.startMenuActive
+  }))
 
   return (
     <div className={`taskbar ${styles.taskbar}`}>
-      <StartMenu isActive={isActive} />
+      <StartMenu isActive={startMenuActive} />
       <div className={`taskbar__inner ${styles.taskbar__inner}`}>
-        <TaskBarLeftBox isActive={isActive} onClick={boxClicked} />
+        <TaskBarLeftBox isActive={startMenuActive} onClick={e => { dispatch({ type: "STARTMENU_TOGGLE" }) }} />
         <TaskBarRightBox />
       </div>
     </div>

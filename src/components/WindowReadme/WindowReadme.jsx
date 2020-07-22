@@ -28,7 +28,7 @@ const WindowReadme = ({ windowReadme }) => {
         handle=".windowReadme__bar__left" >
         <div className={`windowReadme ${styles.windowReadme} ${windowReadme.maximized ? styles.windowReadme__maximized : ""}`}>
           <div className={`windowReadme__bar ${styles.windowReadme__bar}`}>
-            <span className={`windowReadme__bar__left ${styles.windowReadme__bar__left}`}>MS DOS</span>
+            <span className={`windowReadme__bar__left ${styles.windowReadme__bar__left}`}>{t('readme.title')}</span>
             <div className={`windowReadme__bar__button__container ${styles.windowReadme__bar__button__container}`}>
               <button type="button" className={`windowReadme__bar__button ${styles.windowReadme__bar__button}`} onClick={() => { minimize() }}>_</button>
               <button type="button" className={`windowReadme__bar__button ${styles.windowReadme__bar__button}`} onClick={() => { maximize() }}>[]</button>

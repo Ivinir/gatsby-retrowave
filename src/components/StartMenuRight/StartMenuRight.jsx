@@ -20,24 +20,28 @@ const MenuItemList = (props) => {
         { image: 'glitch-greek-bust.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
         { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social' },
         { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools' },
-        { image: 'icon-cv', label: 'startMenu.item.curriculumVitae', value: 'cv' }
+        { image: 'icon-cv', label: 'startMenu.item.curriculumVitae', value: 'cv' },
+        { image: 'read-me.png', label: 'startMenu.item.readMe', value: 'read-me', dispatcher: 'README_OPEN' }
+
       ]
-    } else {
+    } else
       return [
         { image: 'it-about-me.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
         { image: 'it-pizza.png', label: 'startMenu.item.social', value: 'social' },
         { image: 'it-pizza.png', label: 'startMenu.item.myTools', value: 'my-tools' },
-        { image: 'it-pizza.png', label: 'startMenu.item.curriculumVitae', value: 'cv' }
+        { image: 'it-pizza.png', label: 'startMenu.item.curriculumVitae', value: 'cv' },
+        { image: 'read-me.png', label: 'startMenu.item.readMe', value: 'read-me', dispatcher: 'README_OPEN' }
+
       ]
-    }
   }
+
 
   let menuItemList = getMenuItemList()
   const render = []
 
   if (menuItemList) {
     menuItemList.map((value, index) => {
-      render.push(<StartMenuItem key={index} image={value.image} label={value.label} value={value.value} />)
+      render.push(<StartMenuItem key={index} image={value.image} label={value.label} value={value.value} dispatcher={value.dispatcher} />)
     })
   }
 
