@@ -3,10 +3,9 @@ const README_MINIMIZE = 'README_MINIMIZE';
 const README_CLOSE = 'README_CLOSE';
 const README_MAXIMIZE = 'README_MAXIMIZE';
 
-
 const initialState = {
-  windowReadme: { open: true, minimized: false, maximized: false }
-}
+  windowReadme: { open: true, minimized: false, maximized: false },
+};
 
 const windowsReducer = (state = initialState, action) => {
   switch (action.type) {

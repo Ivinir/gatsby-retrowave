@@ -7,5 +7,5 @@ import startMenuReducer from './startMenuReducer';
 export default combineReducers({
   someReducer,
   windowsReducer,
-  startMenuReducer
+  startMenuReducer,
 });
