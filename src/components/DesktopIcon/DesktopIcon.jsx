@@ -9,8 +9,8 @@ const DesktopIcon = (props) => {
   const dispatch = useDispatch()
 
   return (
-    <div className={`desktopIcon ${styles.desktopIcon}`}
-      tabIndex={0}
+    <button className={`desktopIcon ${styles.desktopIcon}`}
+      type="button"
       onClick={() => { dispatch({ type: props.dispatcher }) }}
       onKeyDown={() => { dispatch({ type: props.dispatcher }) }}
     >
@@ -20,7 +20,7 @@ const DesktopIcon = (props) => {
       <div className="desktop-icon__name">
         {t(props.label)}
       </div>
-    </div>
+    </button>
   )
 }
 

@@ -9,12 +9,11 @@ const StartMenuItem = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div
+    <button
       className={`startMenuItem ${styles.startMenuItem}`}
-      role="button"
+      type="button"
       onClick={(e) => { dispatch({ type: props.dispatcher }, dispatch({ type: "STARTMENU_TOGGLE" })) }}
       onKeyDown={(e) => () => { dispatch({ type: props.dispatcher }, dispatch({ type: "STARTMENU_TOGGLE" })) }}
-      tabIndex={0}
     >
       <div className={`startMenuItem__image ${styles.startMenuItem__image}`}>
         <Image alt="placeholder" filename={props.image} />
@@ -22,7 +21,7 @@ const StartMenuItem = (props) => {
       <div className={`startMenuItem___text ${styles.startMenuItem__text}`} >
         {t(props.label)}
       </div>
-    </div>
+    </button>
   )
 }
 
