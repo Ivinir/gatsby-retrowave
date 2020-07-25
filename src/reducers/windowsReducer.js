@@ -3,6 +3,8 @@ const README_MINIMIZE = 'README_MINIMIZE';
 const README_CLOSE = 'README_CLOSE';
 const README_MAXIMIZE = 'README_MAXIMIZE';
 
+import { WINDOW_OPEN } from '../actions/actions'
+
 const initialState = {
   windowReadme: { open: true, minimized: false, maximized: false },
 };
@@ -21,6 +23,10 @@ const windowsReducer = (state = initialState, action) => {
       } else {
         return { ...state, windowReadme: { open: true, minimized: false, maximized: true } };
       }
+    case WINDOW_OPEN: {
+      console.log(action)
+      return { ...state, windowReadme: { open: true, minimized: false, maximized: false } };
+    }
     default:
       return state;
   }

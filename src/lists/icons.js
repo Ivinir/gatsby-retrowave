@@ -1,11 +1,18 @@
+import WindowReadme from "../components/WindowReadme/WindowReadme";
+import { useDispatch, useStore } from 'react-redux';
+import { openWindow } from "../actions/actions";
+import store from '../store/store';
+
+
+
 
 const openCV = () => {
   const cvURL = 'https://drive.google.com/file/d/15KyGipos6rFm9ptyjSTZ-Iom67mNS1Tc/view?usp=sharing';
   window.open(cvURL, '_blank')
 }
 
-const jibiri = () => {
-  console.log('aaaaaazaaaaaaa')
+const displayWindow = (window) => {
+  store.dispatch(openWindow(window))
 }
 
 const iconList = (language) => {
@@ -15,7 +22,7 @@ const iconList = (language) => {
       { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social' },
       { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools' },
       { image: 'icon-cv.png', label: 'startMenu.item.curriculumVitae', value: 'cv', action: openCV },
-      { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', action: jibiri }
+      { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', action: () => { displayWindow('read-me') } }
     ]
   } else {
     return [
