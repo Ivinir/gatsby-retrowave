@@ -23,7 +23,7 @@ const MenuItemList = (props) => {
 
   if (menuItemList) {
     menuItemList.map((value, index) => {
-      render.push(<StartMenuItem key={index} image={value.image} label={value.label} value={value.value} dispatcher={value.dispatcher} />)
+      render.push(<StartMenuItem key={index} image={value.image} label={value.label} value={value.value} action={value.action} />)
     })
   }
 

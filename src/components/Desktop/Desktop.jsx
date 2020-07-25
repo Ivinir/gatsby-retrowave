@@ -25,7 +25,7 @@ const DesktopIconList = () => {
 
   if (desktopIconList) {
     desktopIconList.map((value, index) => {
-      render.push(<DesktopIcon key={index} image={value.image} label={value.label} value={value.value} dispatcher={value.dispatcher} />)
+      render.push(<DesktopIcon key={index} image={value.image} label={value.label} value={value.value} action={value.action} />)
     })
   }
 

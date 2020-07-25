@@ -6,14 +6,13 @@ import { useDispatch } from 'react-redux';
 
 const StartMenuItem = (props) => {
   const { t, i18n } = useTranslation('common');
-  const dispatch = useDispatch();
 
   return (
     <button
       className={`startMenuItem ${styles.startMenuItem}`}
       type="button"
-      onClick={(e) => { dispatch({ type: props.dispatcher }, dispatch({ type: "STARTMENU_TOGGLE" })) }}
-      onKeyDown={(e) => () => { dispatch({ type: props.dispatcher }, dispatch({ type: "STARTMENU_TOGGLE" })) }}
+      onClick={props.action }
+      onKeyDown={props.action }
     >
       <div className={`startMenuItem__image ${styles.startMenuItem__image}`}>
         <Image alt="placeholder" filename={props.image} />
