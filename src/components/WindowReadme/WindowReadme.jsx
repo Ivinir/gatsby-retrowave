@@ -2,46 +2,38 @@ import React, { useEffect, useState } from 'react'
 import Draggable from "react-draggable"
 
 import styles from './windowReadme.module.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { maximizeWindow, closeWindow, minimizeWindow, taskbarItemAdd, taskbarItemRemove } from '../../actions/actions'
 
 const WindowReadme = ({ sectionWindow }) => {
-  const [readmeWindow, setReadmeWindow] = useState({ window: { value: '' } }, { open: false, minimized: false, maximized: false })
-
-  useEffect(() => {
-    if (sectionWindow[0].window?.value === 'read-me') {
-      setReadmeWindow(sectionWindow[1]);
-    }
-  })
-
   const { t, i18n } = useTranslation('common');
 
   const dispatch = useDispatch()
 
   function maximize() {
-    dispatch(maximizeWindow(sectionWindow[0].window))
+    dispatch(maximizeWindow(sectionWindow))
   }
 
   function minimize() {
-    dispatch(minimizeWindow(sectionWindow[0].window))
-    dispatch(taskbarItemRemove(sectionWindow[0].window))
+    dispatch(minimizeWindow(sectionWindow))
+    dispatch(taskbarItemRemove(sectionWindow))
   }
 
   function close() {
-    dispatch(closeWindow(sectionWindow[0].window))
-    dispatch(taskbarItemRemove(sectionWindow[0].window))
+    dispatch(closeWindow(sectionWindow))
+    dispatch(taskbarItemRemove(sectionWindow))
 
   }
 
 
 
-  if (readmeWindow.open && !readmeWindow.minimized) {
+  if (sectionWindow.window.value === 'read-me' && sectionWindow?.open && !sectionWindow?.minimized) {
     return (
       <Draggable
         bounds="parent"
         handle=".windowReadme__bar__left" >
-        <div className={`windowReadme ${styles.windowReadme} ${readmeWindow.maximized ? styles.windowReadme__maximized : ""}`}>
+        <div className={`windowReadme ${styles.windowReadme} ${sectionWindow?.maximized ? styles.windowReadme__maximized : ""}`}>
           <div className={`windowReadme__bar ${styles.windowReadme__bar}`}>
             <span className={`windowReadme__bar__left ${styles.windowReadme__bar__left}`}>{t('readme.title')}</span>
             <div className={`windowReadme__bar__button__container ${styles.windowReadme__bar__button__container}`}>

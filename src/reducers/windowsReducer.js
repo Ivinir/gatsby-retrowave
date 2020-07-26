@@ -11,29 +11,30 @@ import {
 } from '../actions/actions'
 
 const initialState = {
-  sectionWindow: [{ window: null }, { open: true, minimized: false, maximized: false }],
+  sectionWindow: { window: { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me' }, open: true, minimized: false, maximized: false },
 };
 
 const windowsReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case WINDOW_OPEN: {
-      return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: false }] };
+      return { ...state, sectionWindow: { window: action.window.window, open: true, minimized: false, maximized: false } };
     }
 
     case WINDOW_CLOSE: {
-      return { ...state, sectionWindow: [{ window: action.window }, { open: false, minimized: false, maximized: false }] };
+      return { ...state, sectionWindow: { window: action.window.window, open: false, minimized: false, maximized: false } };
     }
 
     case WINDOW_MINIMIZE: {
-      return { ...state, sectionWindow: [{ window: action.window }, { open: false, minimized: true, maximized: false }] };
+      return { ...state, sectionWindow: { window: action.window.window, open: false, minimized: true, maximized: false } };
     }
 
     case WINDOW_MAXIMIZE: {
-      if (state.sectionWindow[1].maximized) {
-        return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: false }] };
+     // const window = action.window;
+      if (state.sectionWindow.maximized) {
+        return { ...state, sectionWindow: { window: action.window, open: true, minimized: false, maximized: false } };
       } else {
-        return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: true }] };
+        return { ...state, sectionWindow: { window: action.window, open: true, minimized: false, maximized: true } };
       }
     }
 

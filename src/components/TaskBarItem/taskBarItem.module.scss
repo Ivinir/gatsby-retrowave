@@ -1,0 +1,27 @@
+.taskBarItem {
+  background-color: lightgray;
+  border-bottom: 2px solid black;
+  border-left: 2px solid white;
+  border-right: 2px solid black;
+  border-top: 2px solid white;
+  display: flex;
+  min-width: 25px;
+  height: 26px;
+  @media (min-width: 600px) {
+    min-width: 120px;
+  }
+}
+
+.taskBarItem__image {
+  width: 23px;
+}
+
+.taskBarItem__label {
+  display: none;
+  white-space: nowrap;
+  line-height: 26px;
+  margin-left: 10px;
+  @media (min-width: 600px) {
+    display: block;
+  }
+}

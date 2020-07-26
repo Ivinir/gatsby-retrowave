@@ -7,8 +7,8 @@ import WindowReadme from '../WindowReadme/WindowReadme';
 import iconList from '../../lists/icons'
 
 const Desktop = () => {
-  const { sectionWindow } = useSelector(state => ({
-    sectionWindow: state.windowsReducer.sectionWindow
+  let { sectionWindow } = useSelector(state => ({
+    sectionWindow: state.windowsReducer.sectionWindow,
   }))
 
   return (

@@ -4,7 +4,7 @@ const STARTMENU_TOGGLE = 'STARTMENU_TOGGLE';
 
 const initialState = {
   startMenuActive: false,
-  taskbarItems: []
+  taskbarItems: [{ window: { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me' }, open: true, minimized: false, maximized: false }]
 };
 
 const startMenuReducer = (state = initialState, action) => {
@@ -13,12 +13,15 @@ const startMenuReducer = (state = initialState, action) => {
       return { ...state, startMenuActive: !state.startMenuActive };
 
     case TASKBAR_ITEM_ADD:
+      const actItem = action.item
       if (state.taskbarItems.length === 0) {
-        state.taskbarItems.push(action.item)
+        state.taskbarItems.push(actItem)
       } else {
         // Checks if item already exists in the taskbarItems array
-        if (!state.taskbarItems.some(item => item[0].window.value === action.item[0].window.value)) {
-          state.taskbarItems.push(action.item)
+        if (!state.taskbarItems.some(item => 
+          item.window.value === actItem.window.value
+          )) {
+          state.taskbarItems.push(actItem)
         } else {
         }
       }
@@ -29,9 +32,6 @@ const startMenuReducer = (state = initialState, action) => {
 
       for (let i = 0; i < state.taskbarItems.length; i++) {
         const item = state.taskbarItems[i];
-        console.log([i, { item }])
-
-
       }
 
       return { ...state, taskbarItems: state.taskbarItems };

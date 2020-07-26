@@ -12,30 +12,34 @@ const openCV = () => {
 }
 
 const displayWindow = (language, number) => {
-  store.dispatch(openWindow([
+
+  store.dispatch(openWindow(
     {
-      window:
-      {
+      window: {
         image: iconList(language)[number].image,
         label: iconList(language)[number].label,
         value: iconList(language)[number].value
-      }
-    },
-    { open: true, minimized: false, maximized: false }
-  ])
-  )
-  store.dispatch(taskbarItemAdd([
+      },
+      open: true,
+      minimized: false,
+      maximized: false
+    }
+  ))
+
+
+  store.dispatch(taskbarItemAdd(
     {
-      window:
-      {
+      window: {
         image: iconList(language)[number].image,
         label: iconList(language)[number].label,
         value: iconList(language)[number].value
-      }
-    },
-    { open: true, minimized: false, maximized: false }
-  ])
-  )
+      },
+      open: true,
+      minimized: false,
+      maximized: false
+    }
+  ))
+
 }
 
 const iconList = (language) => {
@@ -44,7 +48,7 @@ const iconList = (language) => {
       { image: 'glitch-greek-bust.png', label: 'startMenu.item.aboutMe', value: 'about-me', action: (e) => { displayWindow(language, 0) } },
       { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social', action: (e) => { displayWindow(language, 1) } },
       { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools', action: (e) => { displayWindow(language, 2) } },
-      { image: 'icon-cv.png', label: 'startMenu.item.curriculumVitae', value: 'cv', action: openCV },
+      { image: 'icon-cv.png', label: 'startMenu.item.curriculumVitae', value: 'cv', action: (e) =>{openCV()} },
       { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', action: (e) => { displayWindow(language, 4) } }
     ]
   } else {

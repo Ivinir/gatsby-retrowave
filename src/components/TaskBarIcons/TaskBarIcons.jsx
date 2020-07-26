@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './taskBarIcons.module.scss';
 import iconList from '../../lists/icons';
 import { useSelector } from 'react-redux';
+import TaskBarItem from '../TaskBarItem/TaskBarItem';
 
 const TaskBarIcons = (props) => {
 
@@ -9,13 +10,14 @@ const TaskBarIcons = (props) => {
     taskbarItems: state.startMenuReducer.taskbarItems
   }))
 
-  console.log(taskbarItems)
   let render = []
 
+  console.log(taskbarItems)
   if (taskbarItems) {
     taskbarItems.map((value, index) => {
-      const item = value[0].window
-      render.push(<Icon key={index} image={item.image} label={item.label} value={item.value} />)
+      console.log(value)
+      const item = value.window
+      render.push(<TaskBarItem key={index} image={item.image} label={item.label} value={item.value} />)
     })
   }
 
@@ -24,14 +26,6 @@ const TaskBarIcons = (props) => {
     <div className={`taskBarIcons ${styles.taskBarIcons}`}>
       {render}
     </div>
-  )
-}
-
-const Icon = props => {
-  return (
-    <button>
-      {props.value}
-    </button>
   )
 }
 
