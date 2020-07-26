@@ -26,6 +26,20 @@ export function openWindow(window) {
   return { type: WINDOW_OPEN, window }
 }
 
+export function maximizeWindow(window) {
+  return { type: WINDOW_MAXIMIZE, window }
+}
+
+
+export function minimizeWindow(window) {
+  return { type: WINDOW_MINIMIZE, window }
+}
+
+
+export function closeWindow(window) {
+  return { type: WINDOW_CLOSE, window }
+}
+
 export function addTodo(text) {
   return { type: ADD_TODO, text }
 }

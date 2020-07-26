@@ -3,30 +3,42 @@ const README_MINIMIZE = 'README_MINIMIZE';
 const README_CLOSE = 'README_CLOSE';
 const README_MAXIMIZE = 'README_MAXIMIZE';
 
-import { WINDOW_OPEN } from '../actions/actions'
+import {
+  WINDOW_OPEN,
+  WINDOW_CLOSE,
+  WINDOW_MINIMIZE,
+  WINDOW_MAXIMIZE
+} from '../actions/actions'
 
 const initialState = {
-  windowReadme: { open: true, minimized: false, maximized: false },
+  sectionWindow: [[{ window: null }, { open: true, minimized: false, maximized: false }]],
 };
 
 const windowsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case README_OPEN:
-      return { ...state, windowReadme: { open: true, minimized: false, maximized: false } };
-    case README_MINIMIZE:
-      return { ...state, windowReadme: { open: false, minimized: true, maximized: false } };
-    case README_CLOSE:
-      return { ...state, windowReadme: { open: false, minimized: false, maximized: false } };
-    case README_MAXIMIZE:
-      if (state.windowReadme.maximized) {
-        return { ...state, windowReadme: { open: true, minimized: false, maximized: false } };
-      } else {
-        return { ...state, windowReadme: { open: true, minimized: false, maximized: true } };
-      }
+
     case WINDOW_OPEN: {
-      console.log(action)
-      return { ...state, windowReadme: { open: true, minimized: false, maximized: false } };
+      return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: false }] };
     }
+
+    case WINDOW_CLOSE: {
+      return { ...state, sectionWindow: [{ window: action.window }, { open: false, minimized: false, maximized: false }] };
+    }
+
+    case WINDOW_MINIMIZE: {
+      return { ...state, sectionWindow: [{ window: action.window }, { open: false, minimized: true, maximized: false }] };
+    }
+
+    case WINDOW_MAXIMIZE: {
+      console.log(state)
+      console.log(action)
+      if (state.sectionWindow[1].maximized) {
+        return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: false }] };
+      } else {
+        return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: true }] };
+      }
+    }
+
     default:
       return state;
   }

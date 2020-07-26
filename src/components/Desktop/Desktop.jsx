@@ -7,14 +7,14 @@ import WindowReadme from '../WindowReadme/WindowReadme';
 import iconList from '../../lists/icons'
 
 const Desktop = () => {
-  const { windowReadme } = useSelector(state => ({
-    windowReadme: state.windowsReducer.windowReadme
+  const { sectionWindow } = useSelector(state => ({
+    sectionWindow: state.windowsReducer.sectionWindow
   }))
 
   return (
     <div className={`desktop ${styles.desktop}`} >
       <DesktopIconList />
-      <WindowReadme windowReadme={windowReadme} />
+      <WindowReadme sectionWindow={sectionWindow} />
     </div>
   )
 }
