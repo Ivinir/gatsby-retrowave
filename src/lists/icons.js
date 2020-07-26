@@ -12,9 +12,27 @@ const openCV = () => {
 }
 
 const displayWindow = (language, number) => {
-  store.dispatch(openWindow(iconList(language)[number]))
+  store.dispatch(openWindow([
+    {
+      window:
+      {
+        image: iconList(language)[number].image,
+        label: iconList(language)[number].label,
+        value: iconList(language)[number].value
+      }
+    },
+    { open: true, minimized: false, maximized: false }
+  ])
+  )
   store.dispatch(taskbarItemAdd([
-    { window: iconList(language)[number] },
+    {
+      window:
+      {
+        image: iconList(language)[number].image,
+        label: iconList(language)[number].label,
+        value: iconList(language)[number].value
+      }
+    },
     { open: true, minimized: false, maximized: false }
   ])
   )
