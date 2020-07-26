@@ -4,7 +4,7 @@ import Draggable from "react-draggable"
 import styles from './windowReadme.module.scss';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { maximizeWindow, closeWindow, minimizeWindow } from '../../actions/actions'
+import { maximizeWindow, closeWindow, minimizeWindow, taskbarItemAdd, taskbarItemRemove } from '../../actions/actions'
 
 const WindowReadme = ({ sectionWindow }) => {
   const [readmeWindow, setReadmeWindow] = useState({ window: { value: '' } }, { open: false, minimized: false, maximized: false })
@@ -13,8 +13,6 @@ const WindowReadme = ({ sectionWindow }) => {
     if (sectionWindow[0].window?.value === 'read-me') {
       setReadmeWindow(sectionWindow[1]);
     }
-    console.log(readmeWindow)
-    console.log(sectionWindow)
   })
 
   const { t, i18n } = useTranslation('common');
@@ -27,10 +25,13 @@ const WindowReadme = ({ sectionWindow }) => {
 
   function minimize() {
     dispatch(minimizeWindow(sectionWindow[0].window))
+    dispatch(taskbarItemRemove(sectionWindow[0].window))
   }
 
   function close() {
     dispatch(closeWindow(sectionWindow[0].window))
+    dispatch(taskbarItemRemove(sectionWindow[0].window))
+
   }
 
 

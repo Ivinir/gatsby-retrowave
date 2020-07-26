@@ -30,8 +30,6 @@ const windowsReducer = (state = initialState, action) => {
     }
 
     case WINDOW_MAXIMIZE: {
-      console.log(state)
-      console.log(action)
       if (state.sectionWindow[1].maximized) {
         return { ...state, sectionWindow: [{ window: action.window }, { open: true, minimized: false, maximized: false }] };
       } else {

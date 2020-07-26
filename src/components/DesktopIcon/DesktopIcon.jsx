@@ -8,9 +8,6 @@ const DesktopIcon = (props) => {
   const { t, i18n } = useTranslation('common');
   const dispatch = useDispatch()
 
-
-  
-  console.log(props)
   return (
     <button className={`desktopIcon ${styles.desktopIcon}`}
       type="button"

@@ -1,21 +1,29 @@
 import React from 'react'
 import styles from './taskBarIcons.module.scss';
 import iconList from '../../lists/icons';
+import { useSelector } from 'react-redux';
 
 const TaskBarIcons = (props) => {
 
-  const getTaskBarIconList = () => {
-    const { i18n } = useTranslation('common');
-    return (iconList(i18n.language))
+  const { taskbarItems } = useSelector(state => ({
+    taskbarItems: state.startMenuReducer.taskbarItems
+  }))
+
+  console.log(taskbarItems)
+  let render = []
+
+  if (taskbarItems) {
+    taskbarItems.map((value, index) => {
+      const item = value[0].window
+      render.push(<Icon key={index} image={item.image} label={item.label} value={item.value} />)
+    })
   }
 
-  console.log(props)
-  console.log(getTaskBarIconList)
 
   return (
-    <button className={`taskBarIcons ${styles.taskBarIcons}`}>
-      icon
-    </button>
+    <div className={`taskBarIcons ${styles.taskBarIcons}`}>
+      {render}
+    </div>
   )
 }
 

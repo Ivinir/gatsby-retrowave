@@ -8,7 +8,6 @@ const LanguageSelector = () => {
 
   function openMenu() {
     setMenuOpen(!menuOpen)
-    console.log(menuOpen)
 
   }
 
@@ -25,7 +24,6 @@ const LanguageSelectorMenu = (props) => {
 
   function changeLanguage(language) {
     i18n.changeLanguage(language);
-    console.log(i18n)
   }
 
   if (props.menuOpen) {

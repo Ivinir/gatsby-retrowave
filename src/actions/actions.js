@@ -8,6 +8,10 @@ export const WINDOW_CLOSE = 'WINDOW_CLOSE';
 export const WINDOW_MAXIMIZE = 'WINDOW_MAXIMIZE';
 
 
+export const TASKBAR_ITEM_ADD = 'TASKBAR_ITEM_ADD';
+export const TASKBAR_ITEM_REMOVE = 'TASKBAR_ITEM_REMOVE';
+
+
 /*
  * other constants
  */
@@ -40,8 +44,12 @@ export function closeWindow(window) {
   return { type: WINDOW_CLOSE, window }
 }
 
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
+export function taskbarItemAdd(item) {
+  return { type: TASKBAR_ITEM_ADD, item }
+}
+
+export function taskbarItemRemove(item) {
+  return { type: TASKBAR_ITEM_REMOVE, item }
 }
 
 export function toggleTodo(index) {

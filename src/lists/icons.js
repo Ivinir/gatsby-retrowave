@@ -1,6 +1,6 @@
 import WindowReadme from "../components/WindowReadme/WindowReadme";
 import { useDispatch, useStore } from 'react-redux';
-import { openWindow } from "../actions/actions";
+import { openWindow, taskbarItemAdd } from "../actions/actions";
 import store from '../store/store';
 
 
@@ -13,6 +13,11 @@ const openCV = () => {
 
 const displayWindow = (language, number) => {
   store.dispatch(openWindow(iconList(language)[number]))
+  store.dispatch(taskbarItemAdd([
+    { window: iconList(language)[number] },
+    { open: true, minimized: false, maximized: false }
+  ])
+  )
 }
 
 const iconList = (language) => {
