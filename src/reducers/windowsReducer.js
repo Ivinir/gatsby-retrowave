@@ -11,7 +11,7 @@ import {
 } from '../actions/actions'
 
 const initialState = {
-  sectionWindow: [[{ window: null }, { open: true, minimized: false, maximized: false }]],
+  sectionWindow: [{ window: null }, { open: true, minimized: false, maximized: false }],
 };
 
 const windowsReducer = (state = initialState, action) => {

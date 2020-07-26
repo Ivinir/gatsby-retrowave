@@ -11,10 +11,18 @@ const TaskBarIcons = (props) => {
 
   console.log(props)
   console.log(getTaskBarIconList)
-  
+
   return (
     <button className={`taskBarIcons ${styles.taskBarIcons}`}>
       icon
+    </button>
+  )
+}
+
+const Icon = props => {
+  return (
+    <button>
+      {props.value}
     </button>
   )
 }

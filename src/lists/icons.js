@@ -11,18 +11,18 @@ const openCV = () => {
   window.open(cvURL, '_blank')
 }
 
-const displayWindow = (window) => {
-  store.dispatch(openWindow(window))
+const displayWindow = (language, number) => {
+  store.dispatch(openWindow(iconList(language)[number]))
 }
 
 const iconList = (language) => {
   if (language !== 'it') {
     return [
-      { image: 'glitch-greek-bust.png', label: 'startMenu.item.aboutMe', value: 'about-me' },
-      { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social' },
-      { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools' },
+      { image: 'glitch-greek-bust.png', label: 'startMenu.item.aboutMe', value: 'about-me', action: (e) => { displayWindow(language, 0) } },
+      { image: 'icon-contact.png', label: 'startMenu.item.social', value: 'social', action: (e) => { displayWindow(language, 1) } },
+      { image: 'icon-tools.png', label: 'startMenu.item.myTools', value: 'my-tools', action: (e) => { displayWindow(language, 2) } },
       { image: 'icon-cv.png', label: 'startMenu.item.curriculumVitae', value: 'cv', action: openCV },
-      { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', action: () => { displayWindow('read-me') } }
+      { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', action: (e) => { displayWindow(language, 4) } }
     ]
   } else {
     return [

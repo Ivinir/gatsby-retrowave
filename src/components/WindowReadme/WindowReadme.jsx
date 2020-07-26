@@ -7,12 +7,14 @@ import { useTranslation } from 'react-i18next';
 import { maximizeWindow, closeWindow, minimizeWindow } from '../../actions/actions'
 
 const WindowReadme = ({ sectionWindow }) => {
-  const [readmeWindow, setReadmeWindow] = useState({ window: 'read-me' }, { open: false, minimized: false, maximized: false })
+  const [readmeWindow, setReadmeWindow] = useState({ window: { value: '' } }, { open: false, minimized: false, maximized: false })
 
   useEffect(() => {
-    if (sectionWindow[0].window === 'read-me') {
+    if (sectionWindow[0].window?.value === 'read-me') {
       setReadmeWindow(sectionWindow[1]);
     }
+    console.log(readmeWindow)
+    console.log(sectionWindow)
   })
 
   const { t, i18n } = useTranslation('common');
@@ -20,15 +22,15 @@ const WindowReadme = ({ sectionWindow }) => {
   const dispatch = useDispatch()
 
   function maximize() {
-    dispatch(maximizeWindow('read-me'))
+    dispatch(maximizeWindow(sectionWindow[0].window))
   }
 
   function minimize() {
-    dispatch(minimizeWindow('read-me'))
+    dispatch(minimizeWindow(sectionWindow[0].window))
   }
 
   function close() {
-    dispatch(closeWindow('read-me'))
+    dispatch(closeWindow(sectionWindow[0].window))
   }
 
 
