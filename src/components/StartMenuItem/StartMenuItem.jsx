@@ -6,15 +6,13 @@ import { useDispatch } from 'react-redux';
 
 const StartMenuItem = (props) => {
   const { t, i18n } = useTranslation('common');
-  const dispatch = useDispatch();
 
   return (
-    <div
+    <button
       className={`startMenuItem ${styles.startMenuItem}`}
-      role="button"
-      onClick={(e) => { dispatch({ type: props.dispatcher }, dispatch({ type: "STARTMENU_TOGGLE" })) }}
-      onKeyDown={(e) => () => { dispatch({ type: props.dispatcher }, dispatch({ type: "STARTMENU_TOGGLE" })) }}
-      tabIndex={0}
+      type="button"
+      onClick={props.action }
+      onKeyDown={props.action }
     >
       <div className={`startMenuItem__image ${styles.startMenuItem__image}`}>
         <Image alt="placeholder" filename={props.image} />
@@ -22,7 +20,7 @@ const StartMenuItem = (props) => {
       <div className={`startMenuItem___text ${styles.startMenuItem__text}`} >
         {t(props.label)}
       </div>
-    </div>
+    </button>
   )
 }
 
