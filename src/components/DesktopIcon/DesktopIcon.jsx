@@ -9,15 +9,18 @@ const DesktopIcon = (props) => {
   const dispatch = useDispatch()
 
   return (
-    <button className={`desktopIcon ${styles.desktopIcon}`}
+    <button
+      className={`desktopIcon ${styles.desktopIcon}`}
       type="button"
-      onClick={ props.action  }
-      onKeyDown={ props.action  }
+      onClick={props.action}
+      onKeyDown={props.action}
     >
-      <div className="desktop-icon__image">
+      <div
+        className={`desktopIcon__image ${styles.desktopIcon__image}`}>
         <Image alt="placeholder" filename={props.image} />
       </div>
-      <div className="desktop-icon__name">
+      <div
+        className={`desktopIcon__label ${styles.desktopIcon__label}`}>
         {t(props.label)}
       </div>
     </button>

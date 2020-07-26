@@ -1,11 +1,23 @@
 .desktopIcon {
-  height: 50px;
-  width: 50px;
-  margin-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  width: 110px;
+  margin: 10px;
+  /* margin-left: 15px; */
+  /* margin-top: 10px; */
+  /* margin-bottom: 40px; */
   text-align: center;
   background-color: transparent;
   color: white;
   border: none;
+}
+
+
+
+.desktopIcon__label {
+  width: 110px;
+  margin:auto;
+}
+
+.desktopIcon__image {
+  width: 50px;
+  margin:auto;
 }

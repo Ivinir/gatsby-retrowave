@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const StartMenuItem = (props) => {
   const { t, i18n } = useTranslation('common');
+  console.log(props)
 
   return (
     <button

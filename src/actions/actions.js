@@ -26,22 +26,22 @@ export const VisibilityFilters = {
  * action creators
  */
 
-export function openWindow(window) {
-  return { type: WINDOW_OPEN, window }
+export function openWindow(appWindow) {
+  return { type: WINDOW_OPEN, appWindow }
 }
 
-export function maximizeWindow(window) {
-  return { type: WINDOW_MAXIMIZE, window }
-}
-
-
-export function minimizeWindow(window) {
-  return { type: WINDOW_MINIMIZE, window }
+export function maximizeWindow(appWindow) {
+  return { type: WINDOW_MAXIMIZE, appWindow }
 }
 
 
-export function closeWindow(window) {
-  return { type: WINDOW_CLOSE, window }
+export function minimizeWindow(appWindow) {
+  return { type: WINDOW_MINIMIZE, appWindow }
+}
+
+
+export function closeWindow(appWindow) {
+  return { type: WINDOW_CLOSE, appWindow }
 }
 
 export function taskbarItemAdd(item) {

@@ -17,7 +17,6 @@ const WindowReadme = ({ sectionWindow }) => {
 
   function minimize() {
     dispatch(minimizeWindow(sectionWindow))
-    dispatch(taskbarItemRemove(sectionWindow))
   }
 
   function close() {
@@ -28,7 +27,7 @@ const WindowReadme = ({ sectionWindow }) => {
 
 
 
-  if (sectionWindow.window.value === 'read-me' && sectionWindow?.open && !sectionWindow?.minimized) {
+  if (sectionWindow.appWindow.value === 'read-me' && sectionWindow?.open && !sectionWindow?.minimized) {
     return (
       <Draggable
         bounds="parent"

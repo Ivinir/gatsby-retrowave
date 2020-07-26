@@ -14,8 +14,9 @@ const TaskBarIcons = (props) => {
 
   if (taskbarItems) {
     taskbarItems.map((value, index) => {
-      const item = value.window
-      render.push(<TaskBarItem key={index} image={item.image} label={item.label} value={item.value} />)
+      const item = value.appWindow
+      console.log(value)
+      render.push(<TaskBarItem key={index} image={item.image} label={item.label} value={item.value} action={item.action} />)
     })
   }
 

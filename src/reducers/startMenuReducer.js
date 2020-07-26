@@ -1,10 +1,17 @@
 import { TASKBAR_ITEM_ADD, TASKBAR_ITEM_REMOVE } from "../actions/actions";
+import { displayWindow } from "../lists/icons";
 
 const STARTMENU_TOGGLE = 'STARTMENU_TOGGLE';
 
 const initialState = {
   startMenuActive: false,
-  taskbarItems: [{ window: { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me' }, open: true, minimized: false, maximized: false }]
+  taskbarItems: [
+    {
+      appWindow: { image: 'notepad.png', label: 'startMenu.item.readMe', value: 'read-me', action: (e) => { displayWindow('en', 4) } },
+      open: true,
+      minimized: false,
+      maximized: false
+    }]
 };
 
 const startMenuReducer = (state = initialState, action) => {
@@ -19,7 +26,7 @@ const startMenuReducer = (state = initialState, action) => {
       } else {
         // Checks if item already exists in the taskbarItems array
         if (!state.taskbarItems.some(item =>
-          item.window.value === actItem.window.value
+          item.appWindow.value === actItem.appWindow.value
         )) {
           state.taskbarItems.push(actItem)
         } else {
@@ -29,7 +36,7 @@ const startMenuReducer = (state = initialState, action) => {
 
     case TASKBAR_ITEM_REMOVE:
       state.taskbarItems.findIndex((item, index) => {
-        if (item.window.value === actItem.window.value) {
+        if (item.appWindow.value === actItem.appWindow.value) {
           state.taskbarItems.splice(index, 1)
         }
       })
