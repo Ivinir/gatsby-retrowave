@@ -5,7 +5,6 @@ import styles from './taskBarItem.module.scss'
 
 const TaskBarItem = (props) => {
   const { t } = useTranslation('common')
-  console.log(props)
   return (
     <div className={`taskBarItem ${styles.taskBarItem}`}>
       <div className={`taskBarItem__image ${styles.taskBarItem__image}`}>

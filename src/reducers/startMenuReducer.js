@@ -8,19 +8,19 @@ const initialState = {
 };
 
 const startMenuReducer = (state = initialState, action) => {
+  const actItem = action.item
   switch (action.type) {
     case STARTMENU_TOGGLE:
       return { ...state, startMenuActive: !state.startMenuActive };
 
     case TASKBAR_ITEM_ADD:
-      const actItem = action.item
       if (state.taskbarItems.length === 0) {
         state.taskbarItems.push(actItem)
       } else {
         // Checks if item already exists in the taskbarItems array
-        if (!state.taskbarItems.some(item => 
+        if (!state.taskbarItems.some(item =>
           item.window.value === actItem.window.value
-          )) {
+        )) {
           state.taskbarItems.push(actItem)
         } else {
         }
@@ -28,14 +28,12 @@ const startMenuReducer = (state = initialState, action) => {
       return { ...state, taskbarItems: state.taskbarItems };
 
     case TASKBAR_ITEM_REMOVE:
-
-
-      for (let i = 0; i < state.taskbarItems.length; i++) {
-        const item = state.taskbarItems[i];
-      }
-
+      state.taskbarItems.findIndex((item, index) => {
+        if (item.window.value === actItem.window.value) {
+          state.taskbarItems.splice(index, 1)
+        }
+      })
       return { ...state, taskbarItems: state.taskbarItems };
-
 
     default:
       return state;
