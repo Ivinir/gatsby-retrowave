@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Diego Santaolalla <diegosantaolallamartin@gmail.com>",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.1.3",
     "gatsby": "^2.0.0",
     "gatsby-background-image-es5": "^1.1.1",
